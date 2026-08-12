@@ -1,27 +1,3 @@
-/*
- * RaceBox Dash - XIAO ESP32C6 + SSD1309 + MAX17048 + 3 buttons
- *
- * Screens
- *   scan -> address (5 s) -> MAIN MENU
- *   Live    speed MPH, lateral/longitudinal G, heading
- *   Track   Thunderhill configs, gate crossing lap timer
- *   Drag    standing start (60ft / 0-60 / 1/8 / 1/4) and 60-0 braking
- *   Options battery detail from the MAX17048
- *
- * Buttons  D0 = UP   D1 = DOWN   D2 = SELECT
- *          long-press SELECT = back / exit anywhere
- *
- * NOTHING IS RECORDED. No SD, no filesystem, no NVS. Best times live in
- * RAM only and are lost on power cycle. The RaceBox does its own logging.
- *
- * GATE COORDINATES ARE NOT SET. Every track below has valid=false. Open a
- * track and press UP to capture a gate at your current position - the
- * numbers appear on screen so you can write them down and hard-code them
- * in the tracks[] table later.
- *
- * Libraries: U8g2 | Adafruit MAX1704X | NimBLE-Arduino 2.x
- */
-
 #include <Wire.h>
 #include <U8g2lib.h>
 #include <Adafruit_MAX1704X.h>
@@ -29,7 +5,6 @@
 #include <string.h>
 #include <math.h>
 
-// ------------------------------------------------------------------ pins --
 #define PIN_SDA        D4
 #define PIN_SCL        D5
 #define PIN_OLED_RES   D3
