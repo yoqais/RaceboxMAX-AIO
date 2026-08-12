@@ -4,7 +4,7 @@ Wireless display and lap/drag timer for the RaceBox Micro. An ESP32-C6 reads
 the logger's 25 Hz BLE telemetry and shows live speed, G-forces, lap times
 and drag runs on a 2.42" SSD1309 OLED. Powered by a single 18650.
 
-![Alt text](https://github.com/yoqais/RaceboxMAX-AIO/blob/main/raceboxmax0.jpeg)
+![Alt text](https://github.com/yoqais/RaceboxMAX-AIO/blob/main/images/raceboxmax0.jpeg)
 
 ## Hardware
 
