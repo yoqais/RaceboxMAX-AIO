@@ -94,26 +94,30 @@ Speed in MPH as the headline number, with lateral and longitudinal G,
 heading and compass point, altitude, and horizontal accuracy underneath.
 
 ### Track page
+Select a track and the display arms itself. Drive across the start/finish
+line and timing begins automatically. Every crossing after that closes one
+lap and opens the next. While running you get current lap, last lap and best
+lap, with a checkered flag on a new personal best.
 
 Thunderhill East 3 mile, West 2 mile and the 5 mile combined are preloaded.
-The screen reports one of four states:
-no fix, not at track with distance, no gate set, or armed. Once running it shows
-current lap, last lap, best lap, and draws a checkered flag on a new best.
 
-Lap timing works by segment intersection. Each 25 Hz sample is projected into
-local metres and tested against the gate line, and when the path between two
-consecutive samples crosses it, the exact crossing instant is interpolated
-using the RaceBox's own iTOW timestamp rather than millis(). At 100 mph you
-cover 1.8 m between samples, so the interpolation is the difference between
-hundredth-second resolution and plus or minus 0.04 s.
+**Before your first session**, each track needs its start/finish line
+recorded. Gate coordinates ship empty because a gate has to be accurate to a
+few metres and there is no useful default.
 
-Gate coordinates ship empty. Open a track, press up, and the firmware
-captures a 30 m gate perpendicular to your current heading and prints the
-line to serial ready to paste into the tracks table:
+1. Select the track. The screen will read NO GATE SET.
+2. Drive to the start/finish line, pointing the direction you race.
+3. Press UP. The firmware builds a 30 m gate perpendicular to your heading
+   and begins timing immediately.
+4. Check the serial monitor. It prints the gate ready to paste into the
+   tracks table so it survives a power cycle.
+
+Captured gates live in RAM and clear on reboot until you paste them in.
+Uploading tracks and gates from the menu is planned for a future update.
 
 ```
-GATE T-Hill East 3mi
-  {39.5372100, -122.3310400, 39.5371800, -122.3309900, true}
+{ "T-Hill 5 Mile",  39.5372, -122.3310,  3.0f,  {0, 0, 0, 0, false} }
+//     name       center lat  center lon  radius      gate
 ```
 
 The center coordinates in the table are approximate and used only for the
