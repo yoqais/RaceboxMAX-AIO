@@ -55,7 +55,7 @@ Ground is one net, but three separate buses:
 | Bus | Fed from | Carries |
 |---|---|---|
 | GND-A | PowerBoost G pin | XIAO, bulk cap |
-| GND-C | XIAO GND pin | Display, fuel gauge, display DC and CS |
+| GND-C | XIAO GND pin | Display, fuel gauge |
 | GND-B | PowerBoost GND pin | RaceBox, switch, buttons |
 
 The I2C peripherals ground at the XIAO rather than at the PowerBoost. The C6
@@ -93,9 +93,9 @@ heading and compass point, altitude, and horizontal accuracy underneath.
 
 ### Track page
 
-Pick a track and configuration. Thunderhill East 3 mile, West 2 mile and the
-5 mile combined are preloaded. The screen reports one of four states: no fix,
-not at track with distance, no gate set, or armed. Once running it shows
+Thunderhill East 3 mile, West 2 mile and the 5 mile combined are preloaded.
+The screen reports one of four states:
+no fix, not at track with distance, no gate set, or armed. Once running it shows
 current lap, last lap, best lap, and draws a checkered flag on a new best.
 
 Lap timing works by segment intersection. Each 25 Hz sample is projected into
@@ -169,7 +169,7 @@ Printed in PETG, six parts: screen face, enclosure body, enclosure lid, button b
 MAX17048 tray and PowerBoost tray.
 
 Do not print in anything carbon-filled. The XIAO's BLE antenna is inside the
-box and carbon fibre is conductive enough to kill it.
+box and carbon fiber is conductive enough to kill it.
 
 The RaceBox mounts on top of the case, outside, because its patch antenna
 needs a clear view of the sky while the display needs to face the driver.
